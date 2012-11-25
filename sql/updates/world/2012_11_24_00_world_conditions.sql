@@ -1,6 +1,3 @@
-ALTER TABLE `conditions`   
-  ADD COLUMN `ErrorType` MEDIUMINT(8) UNSIGNED DEFAULT 0 NOT NULL AFTER `NegativeCondition`;
-
 /*
  * trinity_string
  * 63    - You can't do that right now.                  -> SPELL_FAILED_CANT_DO_THAT_RIGHT_NOW = 173
