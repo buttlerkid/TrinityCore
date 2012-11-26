@@ -1272,6 +1272,7 @@ void AddBattlegroundScripts()
 
 #ifdef SCRIPTS
 /* This is where custom scripts' loading functions should be declared. */
+void AddSC_TeLe_gossip_codebox();
 void AddSC_Duel_Reset();
 void AddSC_System();
 
@@ -1281,6 +1282,7 @@ void AddCustomScripts()
 {
 #ifdef SCRIPTS
     /* This is where custom scripts should be added. */
+	AddSC_TeLe_gossip_codebox();
 	AddSC_Duel_Reset();
 	AddSC_System();
 
