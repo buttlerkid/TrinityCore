@@ -13,6 +13,9 @@ set(scripts_STAT_SRCS
   Custom/DuelReset.cpp
   Custom/KillStreak.cpp
   Custom/TeleporterNPC.cpp
+  Custom/WorldChatSystem.cpp
+  Custom/VipWorldBuff.cpp
+  Custom/VIPCommands.cpp
 )
 
 message("  -> Prepared: Custom")

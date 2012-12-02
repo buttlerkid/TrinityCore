@@ -1274,6 +1274,9 @@ void AddBattlegroundScripts()
 /* This is where custom scripts' loading functions should be declared. */
 void AddSC_TeLe_gossip_codebox();
 void AddSC_Duel_Reset();
+void AddSC_World_Chat();
+void AddSC_buffcommand();
+void AddSC_vipcommands();
 void AddSC_System();
 
 #endif
@@ -1284,6 +1287,9 @@ void AddCustomScripts()
     /* This is where custom scripts should be added. */
 	AddSC_TeLe_gossip_codebox();
 	AddSC_Duel_Reset();
+	AddSC_World_Chat();
+	AddSC_buffcommand();
+	AddSC_vipcommands();
 	AddSC_System();
 
 #endif
