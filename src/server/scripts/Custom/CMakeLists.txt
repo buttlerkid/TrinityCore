@@ -14,8 +14,12 @@ set(scripts_STAT_SRCS
   Custom/KillStreak.cpp
   Custom/TeleporterNPC.cpp
   Custom/WorldChatSystem.cpp
-  Custom/VipWorldBuff.cpp
   Custom/VIPCommands.cpp
+  Custom/TransmogEngine.cpp
+  Custom/TransmogEngine.h
+  Custom/TransmogHandler.cpp
+  Custom/TransmogMgr.cpp
+  Custom/TransmogMgr.h
 )
 
 message("  -> Prepared: Custom")
