@@ -21,6 +21,7 @@ INSERT INTO `command` VALUES ('vip demorph', '1', '')
 #include "MapManager.h"
 #include "Chat.h"
 #include "Common.h"
+#include "Language.h"
 
 class vipcommands : public CommandScript
 {
