@@ -2,8 +2,19 @@
 * Made By ???
 * Error Fixed By Rochet2
 * Released By Ghostcrawler
+* Edited By Sinistah
 */
 
+/* Insert Into World Database
+INSERT INTO `command` VALUES ('vip mall', '1', '');
+INSERT INTO `command` VALUES ('vip changerace', '1', '');
+INSERT INTO `command` VALUES ('vip changefaction', '1', '');
+INSERT INTO `command` VALUES ('vip maxskills', '1', '');
+INSERT INTO `command` VALUES ('vip customize', '1', '');
+INSERT INTO `command` VALUES ('vip tele', '1', '');
+INSERT INTO `command` VALUES ('vip morph', '1', '');
+INSERT INTO `command` VALUES ('vip demorph', '1', '')
+*/
 
 #include "ScriptMgr.h"
 #include "ObjectMgr.h"
@@ -24,11 +35,12 @@ public:
         {
             { "mall",	    SEC_PLAYER,     true, &HandleVipMallCommand,         "", NULL },
             { "changerace",    SEC_PLAYER,  false, &HandleChangeRaceCommand,             "", NULL },
-	    { "changefaction",	SEC_PLAYER,  false, &HandleChangeFactionCommand,		"", NULL },
-	    { "maxskills",	SEC_PLAYER,  false, &HandleMaxSkillsCommand,		"", NULL },
-	    { "customize",	SEC_PLAYER,  false, &HandleCustomizeCommand,		"", NULL },
-	    { "tele",           SEC_PLAYER,  false, &HandleTeleCommand,		"", NULL },
-	    { "morph",           SEC_PLAYER,  false, &HandleMorphCommand,		"", NULL },
+			{ "changefaction",	SEC_PLAYER,  false, &HandleChangeFactionCommand,		"", NULL },
+			{ "maxskills",	SEC_PLAYER,  false, &HandleMaxSkillsCommand,		"", NULL },
+			{ "customize",	SEC_PLAYER,  false, &HandleCustomizeCommand,		"", NULL },
+			{ "tele",           SEC_PLAYER,  false, &HandleTeleCommand,		"", NULL },
+			{ "morph",           SEC_PLAYER,  false, &HandleMorphCommand,		"", NULL },
+			{ "demorph",           SEC_PLAYER,  false, &HandleDemorphCommand,		"", NULL },
  
             { NULL,             0,                     false, NULL,                                           "", NULL }
         };
@@ -124,7 +136,7 @@ static bool HandleMaxSkillsCommand(ChatHandler* handler, const char* args)
     {
 
         Player* me = handler->GetSession()->GetPlayer();
-		me->UpdateSkillsForLevel();
+		me->UpdateSkillsToMaxSkillsForLevel();
 		handler->PSendSysMessage("Your weapon skills are now maximized.");
         return true;
     }
@@ -160,12 +172,17 @@ static bool HandleVipMallCommand(ChatHandler* handler, const char* args)
         else
             me->SaveRecallPosition();
 
-		me->TeleportTo(0,	23.8378f,	-1588.85f,	195.419f,	4.54306f); // MapId, X, Y, Z, O
+		me->TeleportTo(530,	-1572.22f,	7952.655f,	-22.6071f,	0.995982f); // MapId, X, Y, Z, O
                 return true;
     }
 
-
-
+static bool HandleDemorphCommand(ChatHandler* handler, const char* args)
+	{
+		Player* me = handler->GetSession()->GetPlayer();
+		me->DeMorph();
+		me->SetFloatValue(OBJECT_FIELD_SCALE_X, 1.0);
+		return true;
+	}
 	
 };
 

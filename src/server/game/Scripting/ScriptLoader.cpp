@@ -1275,7 +1275,8 @@ void AddBattlegroundScripts()
 void AddSC_TeLe_gossip_codebox();
 void AddSC_Duel_Reset();
 void AddSC_World_Chat();
-void AddSC_buffcommand();
+void AddSC_transmog();
+void AddSC_StartUpTransmog();
 void AddSC_vipcommands();
 void AddSC_System();
 
@@ -1288,7 +1289,8 @@ void AddCustomScripts()
 	AddSC_TeLe_gossip_codebox();
 	AddSC_Duel_Reset();
 	AddSC_World_Chat();
-	AddSC_buffcommand();
+	AddSC_transmog();
+	AddSC_StartUpTransmog();
 	AddSC_vipcommands();
 	AddSC_System();
 
