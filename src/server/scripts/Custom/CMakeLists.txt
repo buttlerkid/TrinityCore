@@ -15,6 +15,7 @@ set(scripts_STAT_SRCS
   Custom/TeleporterNPC.cpp
   Custom/WorldChatSystem.cpp
   Custom/VIPCommands.cpp
+  Custom/Transmogrification.cpp
 )
 
 message("  -> Prepared: Custom")
