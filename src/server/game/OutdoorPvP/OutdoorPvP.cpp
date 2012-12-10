@@ -162,8 +162,8 @@ bool OPvPCapturePoint::DelCreature(uint32 type)
     // explicit removal from map
     // beats me why this is needed, but with the recent removal "cleanup" some creatures stay in the map if "properly" deleted
     // so this is a big fat workaround, if AddObjectToRemoveList and DoDelayedMovesAndRemoves worked correctly, this wouldn't be needed
-	if (Map* map = sMapMgr->FindMap(cr->GetMapId(), cr->GetInstanceId()))
-		map->RemoveFromMap(cr, false);
+    //if (Map* map = sMapMgr->FindMap(cr->GetMapId()))
+    //    map->Remove(cr, false);
     // delete respawn time for this creature
     PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_DEL_CREATURE_RESPAWN);
     stmt->setUInt32(0, guid);
