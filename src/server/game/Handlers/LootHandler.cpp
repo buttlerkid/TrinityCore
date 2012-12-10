@@ -44,7 +44,7 @@ void WorldSession::HandleAutostoreLootItemOpcode(WorldPacket& recvData)
 
 	if(TransmogEngine::IsActiveInterface(lguid) && player)
 	{
-		if(Creature* creature = player->GetMap()->GetCreature(lguid)))
+		if(Creature* creature = player->GetMap()->GetCreature(lguid))
 			TransmogEngine::HandleInterfaceSelect(player, creature, player->selectedInterface, lootSlot);
 
 		return;
