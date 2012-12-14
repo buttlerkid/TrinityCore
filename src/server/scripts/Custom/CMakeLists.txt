@@ -16,6 +16,7 @@ set(scripts_STAT_SRCS
   Custom/WorldChatSystem.cpp
   Custom/VIPCommands.cpp
   Custom/Transmogrification.cpp
+  Custom/ProfessionsNPC.cpp
 )
 
 message("  -> Prepared: Custom")

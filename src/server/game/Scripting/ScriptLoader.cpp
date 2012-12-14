@@ -1276,6 +1276,7 @@ void AddSC_TeLe_gossip_codebox();
 void AddSC_Duel_Reset();
 void AddSC_World_Chat();
 void AddSC_NPC_Transmogrify();
+void AddSC_Professions_NPC();
 void AddSC_vipcommands();
 void AddSC_System();
 
@@ -1289,6 +1290,7 @@ void AddCustomScripts()
 	AddSC_Duel_Reset();
 	AddSC_World_Chat();
 	AddSC_NPC_Transmogrify();
+	AddSC_Professions_NPC();
 	AddSC_vipcommands();
 	AddSC_System();
 
