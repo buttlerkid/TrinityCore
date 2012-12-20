@@ -17,6 +17,8 @@ set(scripts_STAT_SRCS
   Custom/VIPCommands.cpp
   Custom/Transmogrification.cpp
   Custom/ProfessionsNPC.cpp
+  Custom/EnchanterNPC.cpp
+
 )
 
 message("  -> Prepared: Custom")

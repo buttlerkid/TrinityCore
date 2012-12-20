@@ -1277,8 +1277,10 @@ void AddSC_Duel_Reset();
 void AddSC_World_Chat();
 void AddSC_NPC_Transmogrify();
 void AddSC_Professions_NPC();
+void AddSC_npc_exchanger();
 void AddSC_vipcommands();
 void AddSC_System();
+
 
 #endif
 
@@ -1291,6 +1293,7 @@ void AddCustomScripts()
 	AddSC_World_Chat();
 	AddSC_NPC_Transmogrify();
 	AddSC_Professions_NPC();
+	AddSC_npc_exchanger();
 	AddSC_vipcommands();
 	AddSC_System();
 
