@@ -18,6 +18,7 @@ set(scripts_STAT_SRCS
   Custom/Transmogrification.cpp
   Custom/ProfessionsNPC.cpp
   Custom/EnchanterNPC.cpp
+  Custom/BufferNPC.cpp
 
 )
 
