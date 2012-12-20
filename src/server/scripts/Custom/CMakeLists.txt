@@ -19,6 +19,8 @@ set(scripts_STAT_SRCS
   Custom/ProfessionsNPC.cpp
   Custom/EnchanterNPC.cpp
   Custom/BufferNPC.cpp
+  Custom/BountyHunter.cpp
+  
 
 )
 

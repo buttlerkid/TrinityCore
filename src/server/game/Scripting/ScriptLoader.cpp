@@ -1281,6 +1281,7 @@ void AddSC_NPC_Transmogrify();
 void AddSC_Professions_NPC();
 void AddSC_npc_exchanger();
 void AddSC_npc_buffer();
+void AddSC_BountyHunter();
 void AddSC_vipcommands();
 void AddSC_System();
 
@@ -1298,6 +1299,7 @@ void AddCustomScripts()
 	AddSC_Professions_NPC();
 	AddSC_npc_exchanger();
 	AddSC_npc_buffer();
+	AddSC_BountyHunter();
 	AddSC_vipcommands();
 	AddSC_System();
 

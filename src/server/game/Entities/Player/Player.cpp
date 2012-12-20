@@ -3142,15 +3142,9 @@ void Player::InitTalentForLevel()
         }
 
         uint32 talentPointsForLevel = CalculateTalentsPoints();
-
         // if used more that have then reset
         if (m_usedTalentCount > talentPointsForLevel)
-        {
-            if (!AccountMgr::IsAdminAccount(GetSession()->GetSecurity()))
-                resetTalents(true);
-            else
-                SetFreeTalentPoints(0);
-        }
+            SetFreeTalentPoints(0);
         // else update amount of free points
         else
             SetFreeTalentPoints(talentPointsForLevel - m_usedTalentCount);
@@ -3159,7 +3153,6 @@ void Player::InitTalentForLevel()
     if (!GetSession()->PlayerLoading())
         SendTalentsInfoData(false);                         // update at client
 }
-
 void Player::InitStatsForLevel(bool reapplyMods)
 {
     if (reapplyMods)                                        //reapply stats values only on .reset stats (level) command
