@@ -172,7 +172,7 @@ static bool HandleVipMallCommand(ChatHandler* handler, const char* args)
         else
             me->SaveRecallPosition();
 
-		me->TeleportTo(530,	-1572.22f,	7952.655f,	-22.6071f,	0.995982f); // MapId, X, Y, Z, O
+		me->TeleportTo(571,	5838.920410f,	676.107361f,	609.886108f,	0.627516f); // MapId, X, Y, Z, O
                 return true;
     }
 
