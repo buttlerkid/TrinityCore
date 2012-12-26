@@ -1,8 +1,8 @@
 #include "ScriptPCH.h"
 #include <cstring>
 
-#define SET_CURRENCY 0  //0 for gold, 1 for honor, 2 for tokens
-#define TOKEN_ID 0 // token id
+#define SET_CURRENCY 2  //0 for gold, 1 for honor, 2 for tokens
+#define TOKEN_ID 23247 // token id
 
 #if SET_CURRENCY == 0
 #define BOUNTY_1 "I would like to place a 20g bounty."
@@ -18,7 +18,7 @@
 #endif
 #if SET_CURRENCY == 2
 #define BOUNTY_1 "I would like to place a 1 token bounty."
-#define BOUNTY_2 "I would like to place a 3 token bounty."
+#define BOUNTY_2 "I would like to place a 2 token bounty."
 #define BOUNTY_3 "I would like to place a 5 token bounty."
 #define BOUNTY_4 "I would like to place a 10 token bounty."
 #endif
@@ -44,7 +44,7 @@ enum BountyPrice
 enum BountyPrice
 {
 	BOUNTY_PRICE_1 = 1,
-	BOUNTY_PRICE_2 = 3,
+	BOUNTY_PRICE_2 = 2,
 	BOUNTY_PRICE_3 = 5,
 	BOUNTY_PRICE_4 = 10,
 };
@@ -334,7 +334,7 @@ class BountyHunter : public CreatureScript
 								#if SET_CURRENCY != 2
 								CharacterDatabase.PExecute("INSERT INTO bounties VALUES('%u', '40', '2')", pBounty->GetGUID());
 								#else
-								CharacterDatabase.PExecute("INSERT INTO bounties VALUES('%u', '3', '2')", pBounty->GetGUID());
+								CharacterDatabase.PExecute("INSERT INTO bounties VALUES('%u', '2', '2')", pBounty->GetGUID());
 								#endif
 								alertServer(code, 1);
 								flagPlayer(code);
