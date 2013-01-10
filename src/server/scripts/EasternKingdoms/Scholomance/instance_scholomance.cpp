@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
  * Copyright (C) 2006-2009 ScriptDev2 <https://scriptdev2.svn.sourceforge.net/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -27,17 +27,6 @@ EndScriptData */
 #include "InstanceScript.h"
 #include "scholomance.h"
 
-#define GO_GATE_KIRTONOS    175570
-#define GO_GATE_GANDLING    177374
-#define GO_GATE_MALICIA     177375
-#define GO_GATE_THEOLEN     177377
-#define GO_GATE_POLKELT     177376
-#define GO_GATE_RAVENIAN    177372
-#define GO_GATE_BAROV       177373
-#define GO_GATE_ILLUCIA     177371
-
-#define MAX_ENCOUNTER          2
-
 class instance_scholomance : public InstanceMapScript
 {
 public:
@@ -64,6 +53,7 @@ public:
         uint64 GateRavenianGUID;
         uint64 GateBarovGUID;
         uint64 GateIlluciaGUID;
+        uint64 BrazierOfTheHeraldGUID;
 
         void Initialize()
         {
@@ -77,6 +67,7 @@ public:
             GateRavenianGUID = 0;
             GateBarovGUID = 0;
             GateIlluciaGUID = 0;
+            BrazierOfTheHeraldGUID = 0;
 
             for (uint8 i = 0; i < 6; ++i)
                 IsBossDied[i] = false;
@@ -86,14 +77,15 @@ public:
         {
             switch (go->GetEntry())
             {
-                case GO_GATE_KIRTONOS:  GateKirtonosGUID = go->GetGUID(); break;
-                case GO_GATE_GANDLING:  GateGandlingGUID = go->GetGUID(); break;
-                case GO_GATE_MALICIA:   GateMiliciaGUID = go->GetGUID(); break;
-                case GO_GATE_THEOLEN:   GateTheolenGUID = go->GetGUID(); break;
-                case GO_GATE_POLKELT:   GatePolkeltGUID = go->GetGUID(); break;
-                case GO_GATE_RAVENIAN:  GateRavenianGUID = go->GetGUID(); break;
-                case GO_GATE_BAROV:     GateBarovGUID = go->GetGUID(); break;
-                case GO_GATE_ILLUCIA:   GateIlluciaGUID = go->GetGUID(); break;
+                case GO_GATE_KIRTONOS:           GateKirtonosGUID = go->GetGUID(); break;
+                case GO_GATE_GANDLING:           GateGandlingGUID = go->GetGUID(); break;
+                case GO_GATE_MALICIA:            GateMiliciaGUID = go->GetGUID(); break;
+                case GO_GATE_THEOLEN:            GateTheolenGUID = go->GetGUID(); break;
+                case GO_GATE_POLKELT:            GatePolkeltGUID = go->GetGUID(); break;
+                case GO_GATE_RAVENIAN:           GateRavenianGUID = go->GetGUID(); break;
+                case GO_GATE_BAROV:              GateBarovGUID = go->GetGUID(); break;
+                case GO_GATE_ILLUCIA:            GateIlluciaGUID = go->GetGUID(); break;
+                case GO_BRAZIER_OF_THE_HERALD:   BrazierOfTheHeraldGUID = go->GetGUID(); break;
             }
         }
 
@@ -101,22 +93,22 @@ public:
         {
             switch (type)
             {
-                case DATA_LORDALEXEIBAROV_DEATH:
+                case DATA_LORDALEXEIBAROV:
                     IsBossDied[0] = true;
                     break;
-                case DATA_DOCTORTHEOLENKRASTINOV_DEATH:
+                case DATA_DOCTORTHEOLENKRASTINOV:
                     IsBossDied[1] = true;
                     break;
-                case DATA_THERAVENIAN_DEATH:
+                case DATA_THERAVENIAN:
                     IsBossDied[2] = true;
                     break;
-                case DATA_LOREKEEPERPOLKELT_DEATH:
+                case DATA_LOREKEEPERPOLKELT:
                     IsBossDied[3] = true;
                     break;
-                case DATA_INSTRUCTORMALICIA_DEATH:
+                case DATA_INSTRUCTORMALICIA:
                     IsBossDied[4] = true;
                     break;
-                case DATA_LADYILLUCIABAROV_DEATH:
+                case DATA_LADYILLUCIABAROV:
                     IsBossDied[5] = true;
                     break;
                 case TYPE_GANDLING:
@@ -134,6 +126,19 @@ public:
                 IsBossDied[0] && IsBossDied[1] && IsBossDied[2] &&
                 IsBossDied[3] && IsBossDied[4] && IsBossDied[5])
                 ? IN_PROGRESS : 0;
+        }
+
+        uint64 GetData64(uint32 type) const
+        {
+            switch (type)
+            {
+                case GO_GATE_KIRTONOS:
+                    return GateKirtonosGUID;
+                case GO_BRAZIER_OF_THE_HERALD:
+                    return BrazierOfTheHeraldGUID;
+            }
+
+            return 0;
         }
     };
 };

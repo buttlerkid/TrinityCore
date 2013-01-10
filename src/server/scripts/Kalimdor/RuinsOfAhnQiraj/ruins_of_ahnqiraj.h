@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -42,6 +42,7 @@ enum Creatures
     NPC_HIVEZARA_LARVA          = 15555,
     NPC_SAND_VORTEX             = 15428,
     NPC_OSSIRIAN_TRIGGER        = 15590,
+    NPC_HATCHLING               = 15521
 };
 
 enum GameObjects
