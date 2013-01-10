@@ -280,7 +280,7 @@ std::string CalculateShaPassHash(std::string const& name, std::string const& pas
 
 bool IsPlayerAccount(uint32 gmlevel)
 {
-    return gmlevel == SEC_PLAYER;
+    return gmlevel == SEC_PLAYER || gmlevel == SEC_VIP;
 }
 
 bool IsModeratorAccount(uint32 gmlevel)
