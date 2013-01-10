@@ -1276,7 +1276,7 @@ public:
             if (player != playerTarget)
 			{
                 playerTarget->SendNewItem(item, count, true, false);
-				handler->PSendSysMessage("You gave %s %u %s.", handler->GetNameLink(playerTarget).c_str(), count, item->GetTemplate()->Name1);
+				handler->PSendSysMessage("You gave %s %ux%s.", handler->GetNameLink(playerTarget).c_str(), count, item->GetTemplate()->Name1);
 			}
         }
 
