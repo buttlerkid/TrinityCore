@@ -3010,5 +3010,25 @@ Transmogrification.AllowHeirloom = 1
 
 #
 ###################################################################################################
-=======
->>>>>>> e0a217c9a74c89a7cf3f3564e83ff5f57c9f90b5
+
+###################################################################################################
+# VP Rewarder CONFIG
+#
+#    WebsiteDatabaseInfo
+#        Description: Database connection settings.
+#        Example:     "hostname;port;username;password;database"
+#                     ".;somenumber;username;password;database" - (Use named pipes on Windows
+#                                                                 "enable-named-pipe" to [mysqld]
+#                                                                 section my.ini)
+#                     ".;/path/to/unix_socket;username;password;database" - (use Unix sockets on
+#                                                                           Unix/Linux)
+#        Default:     "127.0.0.1;3306;web_user;web_pass;web_database"       - (WebsiteDatabaseInfo)
+
+WebsiteDatabaseInfo     = "127.0.0.1;3306;web_user;web_pass;web_database"
+
+#
+#     Vote.PointsPerHour
+#        Description: Amount of points gained by the player for every hour they play.
+#        Default:     0.5
+Vote.PointsPerHour = 0.5
+

@@ -20,8 +20,10 @@ set(scripts_STAT_SRCS
   Custom/EnchanterNPC.cpp
   Custom/BufferNPC.cpp
   Custom/BountyHunter.cpp
+  Custom/VP_OnSave.cpp
+  Custom/WebsiteDatabase.h
+  Custom/WebsiteDatabase.cpp
   
-
 )
 
 message("  -> Prepared: Custom")

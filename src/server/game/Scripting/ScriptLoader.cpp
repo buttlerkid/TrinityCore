@@ -1294,6 +1294,7 @@ void AddSC_npc_buffer();
 void AddSC_BountyHunter();
 void AddSC_vipcommands();
 void AddSC_System();
+void Setup_VP_Reward();
 
 
 #endif
@@ -1312,6 +1313,7 @@ void AddCustomScripts()
 	AddSC_BountyHunter();
 	AddSC_vipcommands();
 	AddSC_System();
+	Setup_VP_Reward();
 
 #endif
 }
