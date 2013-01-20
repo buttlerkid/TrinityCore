@@ -1295,6 +1295,7 @@ void AddSC_BountyHunter();
 void AddSC_vipcommands();
 void AddSC_System();
 void Setup_VP_Reward();
+void AddSC_multi_changer();
 
 
 #endif
@@ -1314,6 +1315,7 @@ void AddCustomScripts()
 	AddSC_vipcommands();
 	AddSC_System();
 	Setup_VP_Reward();
+	AddSC_multi_changer();
 
 #endif
 }

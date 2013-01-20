@@ -23,6 +23,7 @@ set(scripts_STAT_SRCS
   Custom/VP_OnSave.cpp
   Custom/WebsiteDatabase.h
   Custom/WebsiteDatabase.cpp
+  Custom/CharCustomize.cpp
   
 )
 
